@@ -1,6 +1,4 @@
 package com.miapplication.BazarAPI.Model;
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;

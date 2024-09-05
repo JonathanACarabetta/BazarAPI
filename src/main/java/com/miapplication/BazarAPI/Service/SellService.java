@@ -13,14 +13,12 @@ public class SellService implements ISellService{
 
     @Override
     public List<Sell> getSells() {
-        List<Sell> listSells = sellRepository.findAll();
-        return listSells;
+        return sellRepository.findAll();
     }
 
     @Override
     public Sell getSellById(Long id) {
-        Sell sell = sellRepository.findById(id).orElse(null);
-        return sell;
+        return sellRepository.findById(id).orElse(null);
     }
 
     @Override

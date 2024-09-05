@@ -1,8 +1,6 @@
 package com.miapplication.BazarAPI.Service;
-
 import com.miapplication.BazarAPI.DTO.CreateClientDTO;
 import com.miapplication.BazarAPI.Model.Client;
-
 import java.util.List;
 
 public class ClientService implements  IClientService{
