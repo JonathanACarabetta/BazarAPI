@@ -2,23 +2,34 @@ package com.miapplication.BazarAPI.Service;
 
 import com.miapplication.BazarAPI.DTO.CreateProductDTO;
 import com.miapplication.BazarAPI.Model.Product;
+import com.miapplication.BazarAPI.Repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ProductService implements IProductService{
+
+    @Autowired ProductRepository productRepository;
+
     @Override
     public List<Product> getProducts() {
-        return List.of();
+        return productRepository.findAll();
     }
 
     @Override
     public Product getProductById(Long id) {
-        return null;
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void saveProduct(CreateProductDTO createProduct) {
-
+    public Product saveProduct(CreateProductDTO createProduct) {
+        Product p = new Product();
+        p.setName(createProduct.getName());
+        p.setBrand(createProduct.getBrand());
+        p.setCost(createProduct.getCost());
+        p.setStock(createProduct.getStock());
+        p.setDeleted(false);
+        return productRepository.save(p);
     }
 
     @Override

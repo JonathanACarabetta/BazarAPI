@@ -1,11 +1,8 @@
 package com.miapplication.BazarAPI.DTO;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Setter @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateProductDTO {
@@ -14,4 +11,35 @@ public class CreateProductDTO {
     private Double cost;
     private int stock;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }

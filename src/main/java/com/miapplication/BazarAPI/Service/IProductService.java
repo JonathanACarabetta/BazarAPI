@@ -11,7 +11,7 @@ public interface IProductService {
     /** Get one product by id*/
     public Product getProductById(Long id);
     /** Create one product using createProductDTO*/
-    public void saveProduct(CreateProductDTO createProduct);
+    public Product saveProduct(CreateProductDTO createProduct);
     /** Edit one Product using an existing id and createProductDTO info*/
     public Product editProduct(CreateProductDTO editProduct, Long id);
     /** Softdelete of one product using an existing id*/
