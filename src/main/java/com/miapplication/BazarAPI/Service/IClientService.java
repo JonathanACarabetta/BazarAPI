@@ -11,7 +11,7 @@ public interface IClientService {
     /** Get one CLient By id*/
     public Client getClientById(Long id);
     /** Create a Client using info in CreateClientDTO*/
-    public void saveClient(CreateClientDTO createClientDTO);
+    public Client saveClient(CreateClientDTO createClientDTO);
     /** Edit a Client using info in editCLientDTO and existing id*/
     public Client editClient(CreateClientDTO editClientDTO, Long id);
     /** SoftDelete a Client using an existing id*/

@@ -1,16 +1,18 @@
 package com.miapplication.BazarAPI.Service;
 
 import com.miapplication.BazarAPI.DTO.CreateSellDTO;
+import com.miapplication.BazarAPI.Model.Product;
 import com.miapplication.BazarAPI.Model.Sell;
 import com.miapplication.BazarAPI.Repository.SellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class SellService implements ISellService{
 
     @Autowired SellRepository sellRepository;
-
+    @Autowired IProductService productService;
     @Override
     public List<Sell> getSells() {
         return sellRepository.findAll();
@@ -22,8 +24,14 @@ public class SellService implements ISellService{
     }
 
     @Override
-    public void saveSell(CreateSellDTO createSellDTO) {
-        //activate this methot when i have all the others Cruds done
+    public Sell saveSell(CreateSellDTO createSellDTO) {
+        Sell sell = new Sell();
+        sell.setDay_sell(LocalDate.now());
+        sell.setDeleted(false);
+        sell.setClient(createSellDTO.getClient());
+        sell.setProductList(createSellDTO.getProductList());
+        sell.setTotal(createSellDTO.getTotal());
+        return  sellRepository.save(sell);
     }
 
     @Override
@@ -31,6 +39,7 @@ public class SellService implements ISellService{
         Sell editSell = this.getSellById(id);
         editSell.setTotal(editSellDTO.getTotal());
         editSell.setProductList(editSellDTO.getProductList());
+        editSell.setClient(editSellDTO.getClient());
         sellRepository.save(editSell);
         return editSell;
     }

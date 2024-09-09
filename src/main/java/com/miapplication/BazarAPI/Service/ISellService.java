@@ -11,7 +11,7 @@ public interface ISellService {
     /** Get one Sell by Id*/
     public Sell getSellById(Long id);
     /** Create one Sell using info in CreateSellDTO*/
-    public void saveSell(CreateSellDTO createSellDTO);
+    public Sell saveSell(CreateSellDTO createSellDTO);
     /** Edit one existing Sell using info in editSellDTO and Id*/
     public Sell editSell(CreateSellDTO editSellDTO, Long id);
     /** SoftDelete of one Sell using an existing Id*/
