@@ -3,9 +3,11 @@ import com.miapplication.BazarAPI.DTO.CreateClientDTO;
 import com.miapplication.BazarAPI.Model.Client;
 import com.miapplication.BazarAPI.Repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ClientService implements  IClientService{
 
     @Autowired

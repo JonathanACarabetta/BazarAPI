@@ -1,9 +1,6 @@
 package com.miapplication.BazarAPI.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
@@ -13,6 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Sell {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_sell;
     private LocalDate day_sell;
     private Double total;

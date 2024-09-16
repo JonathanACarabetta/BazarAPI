@@ -4,9 +4,11 @@ import com.miapplication.BazarAPI.DTO.CreateProductDTO;
 import com.miapplication.BazarAPI.Model.Product;
 import com.miapplication.BazarAPI.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductService implements IProductService{
 
     @Autowired ProductRepository productRepository;

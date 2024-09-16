@@ -1,7 +1,7 @@
 package com.miapplication.BazarAPI.Model;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -9,12 +9,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_product;
     private String name;
     private String brand;
     private Double cost;
     private int stock;
+    @ManyToOne()
+    private Sell sell;
     private boolean isDeleted;
+
+    public Sell getSell() {
+        return sell;
+    }
+
+    public void setSell(Sell sell) {
+        this.sell = sell;
+    }
 
     public Long getId_product() {
         return id_product;

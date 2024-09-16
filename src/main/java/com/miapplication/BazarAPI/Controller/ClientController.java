@@ -14,6 +14,7 @@ public class ClientController {
 
     @Autowired
     IClientService clientService;
+
     @GetMapping("")
     public List<Client> getClients (){
         return clientService.getClients();

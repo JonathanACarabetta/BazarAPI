@@ -5,10 +5,12 @@ import com.miapplication.BazarAPI.Model.Product;
 import com.miapplication.BazarAPI.Model.Sell;
 import com.miapplication.BazarAPI.Repository.SellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class SellService implements ISellService{
 
     @Autowired SellRepository sellRepository;

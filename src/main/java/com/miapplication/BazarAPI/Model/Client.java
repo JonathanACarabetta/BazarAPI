@@ -1,6 +1,5 @@
 package com.miapplication.BazarAPI.Model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +9,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_client;
     private String name;
     private String lastName;
