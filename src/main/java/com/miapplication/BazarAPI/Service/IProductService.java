@@ -17,4 +17,6 @@ public interface IProductService {
     /** Softdelete of one product using an existing id*/
     public void deleteProduct(Long id);
 
+    /** Get all Products witch have less than 5 stock*/
+    public List<Product> lessThanFive();
 }

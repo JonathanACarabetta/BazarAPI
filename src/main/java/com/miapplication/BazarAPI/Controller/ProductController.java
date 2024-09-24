@@ -25,6 +25,12 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    @GetMapping("/falta_stock")
+    public List<Product> getProductsLessThan5 (){
+        List<Product> products =productService.lessThanFive();
+        return  products;
+    }
+
     @PostMapping("/create")
     public Product saveProduct(@RequestBody CreateProductDTO createProductDTO){
         return  productService.saveProduct(createProductDTO);
